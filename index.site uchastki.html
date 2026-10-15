@@ -1,0 +1,553 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Очистка и благоустройство земельных участков | Московская область</title>
+    <meta name="description" content="Профессиональная очистка участков от деревьев, кустарника, мусора. Благоустройство, планировка, дренаж. Московская область. Звоните: 8 977 630-63-74">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Roboto, system-ui, -apple-system, sans-serif;
+            line-height: 1.6;
+            color: #1e2b3c;
+            background: #f4f7fb;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Header */
+        header {
+            background: linear-gradient(135deg, #0e2a47 0%, #1b4a6b 100%);
+            color: #fff;
+            padding: 20px 0;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15);
+        }
+
+        .header-flex {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 15px;
+        }
+
+        .logo {
+            font-size: 1.6rem;
+            font-weight: 700;
+            letter-spacing: 0.5px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .logo span {
+            color: #7fc241;
+        }
+
+        .logo-icon {
+            font-size: 2rem;
+        }
+
+        .header-contacts {
+            display: flex;
+            align-items: center;
+            gap: 25px;
+            flex-wrap: wrap;
+        }
+
+        .header-contacts a {
+            color: #fff;
+            text-decoration: none;
+            font-weight: 500;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+            transition: opacity 0.2s;
+        }
+
+        .header-contacts a:hover {
+            opacity: 0.8;
+        }
+
+        .phone-large {
+            font-size: 1.3rem;
+            font-weight: 700;
+            background: #7fc241;
+            padding: 8px 18px;
+            border-radius: 40px;
+            color: #0e2a47 !important;
+        }
+
+        .phone-large:hover {
+            background: #6aad2e;
+        }
+
+        /* Hero */
+        .hero {
+            background: linear-gradient(rgba(14, 42, 71, 0.8), rgba(14, 42, 71, 0.7)), url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="100" height="100" viewBox="0 0 100 100"><rect width="100" height="100" fill="%231b4a6b"/><path d="M0 70 Q 25 50 50 70 T 100 70 L 100 100 L 0 100 Z" fill="%232a6b8a" opacity="0.4"/><path d="M0 80 Q 30 65 60 80 T 100 80 L 100 100 L 0 100 Z" fill="%237fc241" opacity="0.2"/></svg>');
+            background-size: cover;
+            background-position: center;
+            color: #fff;
+            padding: 80px 0 100px;
+            text-align: center;
+        }
+
+        .hero h1 {
+            font-size: 2.8rem;
+            font-weight: 800;
+            margin-bottom: 20px;
+            line-height: 1.2;
+            max-width: 900px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .hero h1 span {
+            color: #7fc241;
+        }
+
+        .hero p {
+            font-size: 1.3rem;
+            max-width: 700px;
+            margin: 0 auto 35px;
+            opacity: 0.95;
+        }
+
+        .btn {
+            display: inline-block;
+            background: #7fc241;
+            color: #0e2a47;
+            padding: 16px 45px;
+            border-radius: 50px;
+            font-size: 1.2rem;
+            font-weight: 700;
+            text-decoration: none;
+            transition: all 0.3s;
+            border: none;
+            cursor: pointer;
+            box-shadow: 0 8px 20px rgba(127, 194, 65, 0.4);
+        }
+
+        .btn:hover {
+            background: #6aad2e;
+            transform: translateY(-3px);
+            box-shadow: 0 12px 25px rgba(127, 194, 65, 0.5);
+        }
+
+        .btn-outline {
+            background: transparent;
+            border: 2px solid #7fc241;
+            color: #fff;
+            box-shadow: none;
+            margin-left: 15px;
+        }
+
+        .btn-outline:hover {
+            background: #7fc241;
+            color: #0e2a47;
+        }
+
+        /* Sections */
+        section {
+            padding: 70px 0;
+        }
+
+        .section-title {
+            text-align: center;
+            font-size: 2.2rem;
+            font-weight: 800;
+            margin-bottom: 15px;
+            color: #0e2a47;
+        }
+
+        .section-subtitle {
+            text-align: center;
+            max-width: 700px;
+            margin: 0 auto 50px;
+            color: #4a5a6a;
+            font-size: 1.1rem;
+        }
+
+        /* Services Grid */
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 30px;
+        }
+
+        .service-card {
+            background: #fff;
+            border-radius: 18px;
+            padding: 35px 25px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.06);
+            transition: all 0.3s;
+            border-bottom: 5px solid transparent;
+            text-align: center;
+        }
+
+        .service-card:hover {
+            transform: translateY(-8px);
+            border-bottom-color: #7fc241;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+        }
+
+        .service-icon {
+            font-size: 3.2rem;
+            margin-bottom: 20px;
+            display: block;
+        }
+
+        .service-card h3 {
+            font-size: 1.4rem;
+            margin-bottom: 15px;
+            color: #0e2a47;
+        }
+
+        .service-card p {
+            color: #4a5a6a;
+            font-size: 1rem;
+        }
+
+        /* Advantages */
+        .advantages {
+            background: #fff;
+        }
+
+        .advantages-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 30px;
+        }
+
+        .advantage-item {
+            text-align: center;
+            padding: 25px 15px;
+        }
+
+        .advantage-number {
+            font-size: 3rem;
+            font-weight: 800;
+            color: #7fc241;
+            line-height: 1;
+            margin-bottom: 10px;
+        }
+
+        .advantage-item h4 {
+            font-size: 1.2rem;
+            color: #0e2a47;
+            margin-bottom: 8px;
+        }
+
+        .advantage-item p {
+            color: #4a5a6a;
+            font-size: 0.95rem;
+        }
+
+        /* CTA */
+        .cta {
+            background: linear-gradient(135deg, #0e2a47 0%, #1b4a6b 100%);
+            color: #fff;
+            text-align: center;
+        }
+
+        .cta h2 {
+            font-size: 2.2rem;
+            margin-bottom: 20px;
+        }
+
+        .cta p {
+            font-size: 1.2rem;
+            max-width: 600px;
+            margin: 0 auto 35px;
+            opacity: 0.9;
+        }
+
+        /* Contacts */
+        .contacts {
+            background: #fff;
+        }
+
+        .contacts-flex {
+            display: flex;
+            justify-content: center;
+            gap: 60px;
+            flex-wrap: wrap;
+        }
+
+        .contact-item {
+            text-align: center;
+            min-width: 250px;
+        }
+
+        .contact-item .icon {
+            font-size: 2.5rem;
+            margin-bottom: 15px;
+            display: block;
+        }
+
+        .contact-item h4 {
+            font-size: 1.2rem;
+            color: #0e2a47;
+            margin-bottom: 8px;
+        }
+
+        .contact-item a {
+            color: #1b4a6b;
+            text-decoration: none;
+            font-size: 1.3rem;
+            font-weight: 600;
+            transition: color 0.2s;
+        }
+
+        .contact-item a:hover {
+            color: #7fc241;
+        }
+
+        /* Footer */
+        footer {
+            background: #0b1e30;
+            color: #a0b4c8;
+            text-align: center;
+            padding: 30px 0;
+            font-size: 0.95rem;
+        }
+
+        footer a {
+            color: #7fc241;
+            text-decoration: none;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 2rem;
+            }
+
+            .hero p {
+                font-size: 1.1rem;
+            }
+
+            .btn {
+                padding: 14px 30px;
+                font-size: 1rem;
+                display: block;
+                width: 100%;
+                margin-bottom: 15px;
+            }
+
+            .btn-outline {
+                margin-left: 0;
+            }
+
+            .header-flex {
+                flex-direction: column;
+                text-align: center;
+            }
+
+            .header-contacts {
+                justify-content: center;
+                gap: 15px;
+            }
+
+            .phone-large {
+                font-size: 1.1rem;
+                padding: 6px 15px;
+            }
+
+            .section-title {
+                font-size: 1.8rem;
+            }
+
+            .contacts-flex {
+                gap: 40px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .hero {
+                padding: 50px 0 60px;
+            }
+
+            .hero h1 {
+                font-size: 1.6rem;
+            }
+
+            .logo {
+                font-size: 1.3rem;
+            }
+
+            .service-card {
+                padding: 25px 18px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Шапка -->
+    <header>
+        <div class="container header-flex">
+            <div class="logo">
+                <span class="logo-icon">🌿</span>
+                <div>Земля<span>Чист</span></div>
+            </div>
+            <div class="header-contacts">
+                <a href="mailto:vit727@mail.ru">✉️ vit727@mail.ru</a>
+                <a href="tel:+79776306374" class="phone-large">📞 8 977 630-63-74</a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Герой -->
+    <section class="hero">
+        <div class="container">
+            <h1>Очистка и благоустройство <span>земельных участков</span> в Московской области</h1>
+            <p>Профессионально расчищаем участки от деревьев, кустарника, мусора. Выполняем планировку, дренаж и комплексное благоустройство. Работаем с любыми объёмами.</p>
+            <div>
+                <a href="tel:+79776306374" class="btn">📞 Позвонить сейчас</a>
+                <a href="#contacts" class="btn btn-outline">Оставить заявку</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Услуги -->
+    <section id="services">
+        <div class="container">
+            <h2 class="section-title">Наши услуги</h2>
+            <p class="section-subtitle">Полный цикл работ по подготовке и облагораживанию вашего участка</p>
+            <div class="services-grid">
+                <div class="service-card">
+                    <span class="service-icon">🌳</span>
+                    <h3>Расчистка от деревьев</h3>
+                    <p>Валка деревьев любой сложности, корчевание пней, удаление кустарника и поросли. Вывоз порубочных остатков.</p>
+                </div>
+                <div class="service-card">
+                    <span class="service-icon">🚜</span>
+                    <h3>Планировка участка</h3>
+                    <p>Вертикальная планировка, выравнивание рельефа, создание уклонов для отвода воды. Подготовка под газон и посадки.</p>
+                </div>
+                <div class="service-card">
+                    <span class="service-icon">🧹</span>
+                    <h3>Уборка мусора</h3>
+                    <p>Сбор и вывоз строительного и бытового мусора, демонтаж старых построек, очистка от металлолома.</p>
+                </div>
+                <div class="service-card">
+                    <span class="service-icon">💧</span>
+                    <h3>Дренажные работы</h3>
+                    <p>Устройство дренажных систем для отвода грунтовых и талых вод, защита фундамента и участка от подтопления.</p>
+                </div>
+                <div class="service-card">
+                    <span class="service-icon">🌱</span>
+                    <h3>Благоустройство</h3>
+                    <p>Устройство газона, дорожек, альпийских горок, посадка деревьев и кустарников. Ландшафтный дизайн под ключ.</p>
+                </div>
+                <div class="service-card">
+                    <span class="service-icon">🚛</span>
+                    <h3>Вывоз грунта</h3>
+                    <p>Разработка котлованов, вывоз лишнего грунта, завоз плодородной земли и торфа для озеленения.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Преимущества -->
+    <section class="advantages">
+        <div class="container">
+            <h2 class="section-title">Почему выбирают нас</h2>
+            <p class="section-subtitle">Мы работаем быстро, качественно и по честным ценам</p>
+            <div class="advantages-grid">
+                <div class="advantage-item">
+                    <div class="advantage-number">15+</div>
+                    <h4>лет опыта</h4>
+                    <p>Более 15 лет успешной работы в Московской области</p>
+                </div>
+                <div class="advantage-item">
+                    <div class="advantage-number">500+</div>
+                    <h4>участков</h4>
+                    <p>Более 500 облагороженных участков и довольных клиентов</p>
+                </div>
+                <div class="advantage-item">
+                    <div class="advantage-number">100%</div>
+                    <h4>гарантия</h4>
+                    <p>Официальный договор и гарантия на все виды работ</p>
+                </div>
+                <div class="advantage-item">
+                    <div class="advantage-number">24/7</div>
+                    <h4>на связи</h4>
+                    <p>Отвечаем на звонки и сообщения в любое время</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA -->
+    <section class="cta">
+        <div class="container">
+            <h2>Нужна помощь с участком?</h2>
+            <p>Позвоните нам или напишите — мы бесплатно проконсультируем и рассчитаем стоимость работ в течение 15 минут.</p>
+            <a href="tel:+79776306374" class="btn">📞 8 977 630-63-74</a>
+            <a href="mailto:vit727@mail.ru" class="btn btn-outline">✉️ Написать на почту</a>
+        </div>
+    </section>
+
+    <!-- Контакты -->
+    <section id="contacts" class="contacts">
+        <div class="container">
+            <h2 class="section-title">Контакты</h2>
+            <p class="section-subtitle">Свяжитесь с нами удобным способом</p>
+            <div class="contacts-flex">
+                <div class="contact-item">
+                    <span class="icon">📞</span>
+                    <h4>Телефон</h4>
+                    <a href="tel:+79776306374">8 977 630-63-74</a>
+                </div>
+                <div class="contact-item">
+                    <span class="icon">✉️</span>
+                    <h4>Электронная почта</h4>
+                    <a href="mailto:vit727@mail.ru">vit727@mail.ru</a>
+                </div>
+                <div class="contact-item">
+                    <span class="icon">📍</span>
+                    <h4>Регион работы</h4>
+                    <p style="font-size:1.1rem; font-weight:600; color:#0e2a47;">Москва и Московская область</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Подвал -->
+    <footer>
+        <div class="container">
+            <p>© 2025 ЗемляЧист — очистка и благоустройство земельных участков в Московской области.</p>
+            <p>Телефон: <a href="tel:+79776306374">8 977 630-63-74</a> | Email: <a href="mailto:vit727@mail.ru">vit727@mail.ru</a></p>
+        </div>
+    </footer>
+
+    <!-- Плавная прокрутка -->
+    <script>
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                }
+            });
+        });
+    </script>
+
+</body>
+</html>
